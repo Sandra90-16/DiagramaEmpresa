@@ -1,0 +1,29 @@
+classDiagram
+	Persona <|-- Empleado
+	Persona <|-- Cliente
+    Empleado <|-- Directivo
+    Persona <|-- Cliente
+    Empleado <|-- Empresa
+    Cliente <|-- Empresa
+    Cliente "0..* clientes" --> "1..* " Empresa
+    Empleado "1..* empleados" --> "1" Empresa
+    Empleado "0..*" <-- "0..*" Directivo
+	Persona : +String nombre
+	Persona : +int edad
+	Persona: +mostrar()
+	class Empleado{
+		-float sueldoBruto
+		+mostrar()
+		+CalcularSalarioNeto()
+	}
+	class Cliente{
+		-String TelefonoContacto
+		+mostrar()
+	}
+	class Directivo{
+		-categoria
+		+mostrar()
+	}
+	class Empresa{
+		-nombre
+	}				
